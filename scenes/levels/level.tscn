@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cyd3b4apo1n88"]
+
+[ext_resource type="Texture2D" uid="uid://dcan26g7t2gcc" path="res://assets/sprites/bg.png" id="1_377w7"]
+[ext_resource type="Texture2D" uid="uid://bq58rojetdem1" path="res://assets/sprites/ground.png" id="2_bovvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
+size = Vector2(2401, 162)
+
+[node name="Level" type="Node2D" unique_id=1260434264]
+
+[node name="Environment" type="Node2D" parent="." unique_id=782418196]
+
+[node name="Backgroud" type="Sprite2D" parent="Environment" unique_id=1056747608]
+position = Vector2(1002, 543)
+texture = ExtResource("1_377w7")
+metadata/_edit_lock_ = true
+
+[node name="Backgroud2" type="Sprite2D" parent="Environment" unique_id=1891603618]
+position = Vector2(3402, 543)
+texture = ExtResource("1_377w7")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="StaticBody2D" parent="Environment" unique_id=2007634664]
+position = Vector2(1002, 1061)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground" unique_id=1928194621]
+texture = ExtResource("2_bovvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground" unique_id=720916808]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_b2cq8")
+
+[node name="Ground2" type="StaticBody2D" parent="Environment" unique_id=1022124093]
+position = Vector2(3402, 1061)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground2" unique_id=702560023]
+texture = ExtResource("2_bovvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground2" unique_id=439379766]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_b2cq8")
