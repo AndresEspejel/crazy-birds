@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dcan26g7t2gcc" path="res://assets/sprites/bg.png" id="1_377w7"]
 [ext_resource type="Texture2D" uid="uid://bq58rojetdem1" path="res://assets/sprites/ground.png" id="2_bovvr"]
+[ext_resource type="PackedScene" uid="uid://2nwkc5ihnwf7" path="res://scenes/crate/crate.tscn" id="3_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://dy4txvxwuj5v1" path="res://scenes/player/player.tscn" id="4_xb4v1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
 size = Vector2(2401, 162)
@@ -41,3 +43,9 @@ texture = ExtResource("2_bovvr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground2" unique_id=439379766]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_b2cq8")
+
+[node name="Crate" parent="." unique_id=1098663158 instance=ExtResource("3_b2cq8")]
+position = Vector2(1665, 929)
+
+[node name="Player" parent="." unique_id=1585776 instance=ExtResource("4_xb4v1")]
+position = Vector2(561, 460)

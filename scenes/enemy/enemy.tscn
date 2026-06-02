@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cflenyhb0cy4c"]
+
+[ext_resource type="Texture2D" uid="uid://dcwf037d0mq70" path="res://assets/sprites/monster.png" id="1_4a83h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3pup"]
+atlas = ExtResource("1_4a83h")
+region = Rect2(0, 0, 73, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40wdo"]
+atlas = ExtResource("1_4a83h")
+region = Rect2(73, 0, 73, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjssy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3pup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40wdo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl05p"]
+size = Vector2(56, 68.5)
+
+[node name="Enemy" type="RigidBody2D" unique_id=1504171684]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439902510]
+sprite_frames = SubResource("SpriteFrames_tjssy")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.04748716
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721912694]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_gl05p")

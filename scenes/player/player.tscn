@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dy4txvxwuj5v1"]
+
+[ext_resource type="Texture2D" uid="uid://y6sgmai7sjc" path="res://assets/sprites/bird.png" id="1_8afob"]
+[ext_resource type="Script" uid="uid://djf6ktmfotj40" path="res://scenes/player/player.gd" id="1_dovo2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
+atlas = ExtResource("1_8afob")
+region = Rect2(0, 0, 115, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
+atlas = ExtResource("1_8afob")
+region = Rect2(115, 0, 115, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
+atlas = ExtResource("1_8afob")
+region = Rect2(230, 0, 115, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
+atlas = ExtResource("1_8afob")
+region = Rect2(345, 0, 115, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75vfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dovo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmlin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvxji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p47bc")
+}],
+"loop": true,
+"name": &"flap",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8afob"]
+radius = 33.0
+height = 76.0
+
+[node name="Player" type="RigidBody2D" unique_id=1585776]
+input_pickable = true
+freeze = true
+script = ExtResource("1_dovo2")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=64131787]
+sprite_frames = SubResource("SpriteFrames_75vfm")
+animation = &"flap"
+autoplay = "flap"
+frame = 2
+frame_progress = 0.37099126
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392511920]
+position = Vector2(2, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8afob")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

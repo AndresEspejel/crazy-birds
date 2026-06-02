@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://2nwkc5ihnwf7"]
+
+[ext_resource type="Texture2D" uid="uid://cy6go5hr24664" path="res://assets/sprites/crate.png" id="1_jpei4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1jke"]
+size = Vector2(100, 100)
+
+[node name="Crate" type="RigidBody2D" unique_id=1098663158]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626332315]
+texture = ExtResource("1_jpei4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1914996188]
+shape = SubResource("RectangleShape2D_j1jke")
