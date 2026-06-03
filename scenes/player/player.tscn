@@ -47,6 +47,7 @@ height = 76.0
 input_pickable = true
 freeze = true
 script = ExtResource("1_dovo2")
+force_multiplier = 10.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=64131787]

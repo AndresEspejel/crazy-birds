@@ -1,13 +1,15 @@
 extends RigidBody2D
 
-var is_dragged = false
+@export var force_multiplier: float
 
-# Called when the node enters the scene tree for the first time.
+var is_dragged = false
+var start_position
+var force_vector
+
 func _ready() -> void:
+	start_position = position
 	sleeping_state_changed.connect(_on_sleeping_state_changed)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	if is_dragged:
 		position = get_global_mouse_position()
@@ -16,8 +18,13 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event.is_action_pressed("drag"):
 		is_dragged = true
 	if event.is_action_released("drag"):
-		is_dragged = false
-		freeze = false
+		launch()
+
+func launch():
+	is_dragged = false
+	freeze = false
+	force_vector = start_position - position
+	apply_impulse(force_vector * force_multiplier)
 
 func  _on_sleeping_state_changed():
 	queue_free()
