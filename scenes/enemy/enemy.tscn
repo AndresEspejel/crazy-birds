@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cflenyhb0cy4c"]
 
 [ext_resource type="Texture2D" uid="uid://dcwf037d0mq70" path="res://assets/sprites/monster.png" id="1_4a83h"]
+[ext_resource type="Script" uid="uid://nlkt4hq5wpem" path="res://scenes/enemy/enemy.gd" id="1_a3pup"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3pup"]
 atlas = ExtResource("1_4a83h")
@@ -28,6 +29,9 @@ animations = [{
 size = Vector2(56, 68.5)
 
 [node name="Enemy" type="RigidBody2D" unique_id=1504171684]
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_a3pup")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439902510]
@@ -35,7 +39,7 @@ sprite_frames = SubResource("SpriteFrames_tjssy")
 animation = &"idle"
 autoplay = "idle"
 frame = 1
-frame_progress = 0.04748716
+frame_progress = 0.5443193
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721912694]
 position = Vector2(0, 4.75)
