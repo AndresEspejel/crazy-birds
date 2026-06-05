@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcwf037d0mq70" path="res://assets/sprites/monster.png" id="1_4a83h"]
 [ext_resource type="Script" uid="uid://nlkt4hq5wpem" path="res://scenes/enemy/enemy.gd" id="1_a3pup"]
+[ext_resource type="PackedScene" uid="uid://faofm7dvvoe3" path="res://scenes/explosion/explosion.tscn" id="2_40wdo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3pup"]
 atlas = ExtResource("1_4a83h")
@@ -32,6 +33,8 @@ size = Vector2(56, 68.5)
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_a3pup")
+explosion_scene = ExtResource("2_40wdo")
+velocity_threshold = 50.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439902510]
