@@ -5,7 +5,10 @@ signal player_spawned(player_instance)
 const PLAYER = preload("uid://dy4txvxwuj5v1")
 
 
+var can_spawn = true
+
 func _ready() -> void:
+	SignalManager.level_completed.connect(_on_level_completed)
 	create_player()
 
 func _process(delta: float) -> void:
@@ -19,5 +22,8 @@ func create_player():
 	player_spawned.emit(player_instance)
 	
 func _on_player_tree_exited():
-	create_player()
+	if can_spawn:
+		create_player()
 	
+func _on_level_completed():
+	can_spawn = false

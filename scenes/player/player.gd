@@ -4,7 +4,6 @@ extends RigidBody2D
 
 @onready var line_2d: Line2D = $Line2D
 
-
 const MAX_DRAG_DISTANCE = 150.0
 var is_dragged = false
 var start_position
@@ -53,6 +52,8 @@ func launch():
 	var force_vector = (start_position - position)* force_multiplier
 	apply_impulse(force_vector )
 	line_2d.visible = false
+	GameManager.increase_launches()
+	SignalManager.player_launched.emit()
 
 func  _on_sleeping_state_changed():
 	queue_free()

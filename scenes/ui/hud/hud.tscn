@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bdlue7la7td64"]
 
+[ext_resource type="Script" uid="uid://dmjlt52f3c3ce" path="res://scenes/ui/hud/hud.gd" id="1_bngdn"]
+
 [node name="HUD" type="Control" unique_id=1723185418]
 layout_mode = 3
 anchors_preset = 15
@@ -8,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_bngdn")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1993748293]
 layout_mode = 1
@@ -26,3 +29,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Launches: 0"
+
+[node name="LevelCompletedLabel" type="Label" parent="MarginContainer" unique_id=1628180543]
+visible = false
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "NIVEL COMPLETADO"
+horizontal_alignment = 1
