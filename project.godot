@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Crazy birds"
-run/main_scene="uid://cyd3b4apo1n88"
+run/main_scene="uid://cngwgwnq6sb7o"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://vc4srm81xbgd"
 
 [display]
 
@@ -26,6 +30,10 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 player=""
+
+[gui]
+
+theme/custom="uid://bg44opq6rma8g"
 
 [input]
 

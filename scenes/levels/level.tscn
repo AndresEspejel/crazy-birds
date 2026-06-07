@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://cyd3b4apo1n88"]
 
 [ext_resource type="Texture2D" uid="uid://dcan26g7t2gcc" path="res://assets/sprites/bg.png" id="1_377w7"]
+[ext_resource type="Script" uid="uid://dnmv11rdy1lsb" path="res://scenes/levels/level.gd" id="1_urvlt"]
 [ext_resource type="Texture2D" uid="uid://bq58rojetdem1" path="res://assets/sprites/ground.png" id="2_bovvr"]
-[ext_resource type="PackedScene" uid="uid://2nwkc5ihnwf7" path="res://scenes/crate/crate.tscn" id="3_b2cq8"]
 [ext_resource type="Script" uid="uid://kk8wg7u5rheo" path="res://scenes/levels/player_spawner.gd" id="4_urvlt"]
-[ext_resource type="PackedScene" uid="uid://cflenyhb0cy4c" path="res://scenes/enemy/enemy.tscn" id="6_d4w6o"]
+[ext_resource type="PackedScene" uid="uid://bdlue7la7td64" path="res://scenes/ui/hud/hud.tscn" id="6_d4w6o"]
 [ext_resource type="Script" uid="uid://dgft17myf8lw2" path="res://scenes/levels/follow_camera.gd" id="7_mbbpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
 size = Vector2(2401, 162)
 
 [node name="Level" type="Node2D" unique_id=1260434264]
+script = ExtResource("1_urvlt")
 
 [node name="Environment" type="Node2D" parent="." unique_id=782418196]
 
@@ -46,32 +47,23 @@ texture = ExtResource("2_bovvr")
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_b2cq8")
 
-[node name="Crate" parent="." unique_id=1098663158 instance=ExtResource("3_b2cq8")]
-position = Vector2(1510, 932)
-
-[node name="Crate2" parent="." unique_id=654124768 instance=ExtResource("3_b2cq8")]
-position = Vector2(1511, 832)
-
-[node name="Crate3" parent="." unique_id=1807812179 instance=ExtResource("3_b2cq8")]
-position = Vector2(1511, 732)
-
-[node name="Crate4" parent="." unique_id=1846214708 instance=ExtResource("3_b2cq8")]
-position = Vector2(1511, 631)
-
-[node name="Crate5" parent="." unique_id=1759741791 instance=ExtResource("3_b2cq8")]
-position = Vector2(1512, 533)
-
 [node name="PlayerSpawner" type="Marker2D" parent="." unique_id=1711792278]
 position = Vector2(336, 785)
 script = ExtResource("4_urvlt")
-
-[node name="Enemy" parent="." unique_id=1504171684 instance=ExtResource("6_d4w6o")]
-position = Vector2(1662, 928)
 
 [node name="FollowCamera" type="Camera2D" parent="." unique_id=493067398]
 position = Vector2(960, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("7_mbbpy")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1697504092]
+
+[node name="Creates" type="Node2D" parent="." unique_id=2130738131]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1882350104]
+
+[node name="HUD" parent="UILayer" unique_id=1723185418 instance=ExtResource("6_d4w6o")]
+metadata/_edit_lock_ = true
 
 [connection signal="player_spawned" from="PlayerSpawner" to="FollowCamera" method="_on_player_spawner_player_spawned"]

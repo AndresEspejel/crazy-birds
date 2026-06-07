@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cngwgwnq6sb7o"]
+
+[ext_resource type="Texture2D" uid="uid://dcan26g7t2gcc" path="res://assets/sprites/bg.png" id="1_3lgjr"]
+[ext_resource type="Script" uid="uid://cnshus0a2231i" path="res://scenes/ui/main/start_button.gd" id="2_kabir"]
+
+[node name="Main" type="Control" unique_id=1519063516]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1498615855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3lgjr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1981454858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="TitleText" type="Label" parent="VBoxContainer" unique_id=1781881465]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Crazy Birds"
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=661796750]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "START"
+script = ExtResource("2_kabir")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_pressed"]

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c7hh527ko7kmv"]
+
+[ext_resource type="PackedScene" uid="uid://cyd3b4apo1n88" path="res://scenes/levels/level.tscn" id="1_0ljxa"]
+[ext_resource type="PackedScene" uid="uid://cflenyhb0cy4c" path="res://scenes/enemy/enemy.tscn" id="2_0qepi"]
+[ext_resource type="PackedScene" uid="uid://2nwkc5ihnwf7" path="res://scenes/crate/crate.tscn" id="3_fmg3e"]
+
+[node name="Level3" unique_id=1260434264 instance=ExtResource("1_0ljxa")]
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(1697504092) index="0" unique_id=1504171684 instance=ExtResource("2_0qepi")]
+position = Vector2(820, 940)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(1697504092) index="1" unique_id=1720404406 instance=ExtResource("2_0qepi")]
+position = Vector2(1120, 360)
+
+[node name="Enemy3" parent="Enemies" parent_id_path=PackedInt32Array(1697504092) index="2" unique_id=193472231 instance=ExtResource("2_0qepi")]
+position = Vector2(1420, 760)
+
+[node name="Crate" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="0" unique_id=1098663158 instance=ExtResource("3_fmg3e")]
+position = Vector2(1120, 940)
+
+[node name="Crate2" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="1" unique_id=747615688 instance=ExtResource("3_fmg3e")]
+position = Vector2(1120, 840)
+
+[node name="Crate3" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="2" unique_id=1652101190 instance=ExtResource("3_fmg3e")]
+position = Vector2(1120, 740)
+
+[node name="Crate4" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="3" unique_id=1393628898 instance=ExtResource("3_fmg3e")]
+position = Vector2(1120, 640)
+
+[node name="Crate5" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="4" unique_id=1105817164 instance=ExtResource("3_fmg3e")]
+position = Vector2(1120, 540)
+
+[node name="Crate6" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="5" unique_id=1713383873 instance=ExtResource("3_fmg3e")]
+position = Vector2(1120, 440)
+
+[node name="Crate7" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="6" unique_id=178312356 instance=ExtResource("3_fmg3e")]
+position = Vector2(1420, 940)
+
+[node name="Crate8" parent="Creates" parent_id_path=PackedInt32Array(2130738131) index="7" unique_id=1412324310 instance=ExtResource("3_fmg3e")]
+position = Vector2(1420, 840)
